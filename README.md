@@ -5,6 +5,11 @@ This project showcases the culmination of our journey through developing languag
 
 ---
 
+## Compiling and Execution:
+Use GHCi, open your terminal, type ghci to start the interactive environment, load Haskell file with :load mini-language.hs, run functions by typing their names (e.g., run func), and exit with :quit.
+
+---
+
 ## Language Features
 
 - **Booleans**: Includes `true` and `false` as defined in the Typed Arithmetic Expression language.
