@@ -1,49 +1,67 @@
+# 2048 Game - Java GUI Implementation
 
-# Mini-Language
-
-This project showcases the culmination of our journey through developing language components and type-checking rules for a simple programming language. The objective is to integrate all the concepts learned and build a Haskell-based implementation of a programming language with the following features:
-
----
-
-## Compiling and Execution:
-Use GHCi, open your terminal, type ghci to start the interactive environment, load Haskell file with :load mini-language.hs, run functions by typing their names (e.g., run func), and exit with :quit.
+This project is a Java-based implementation of the popular 2048 puzzle game, developed as part of a software development course. It follows the Model-View-Controller (MVC) design pattern, ensuring a clean, modular structure that enhances code readability and simplifies future extensions.
 
 ---
 
-## Language Features
+## Compiling and Execution
 
-- **Booleans**: Includes `true` and `false` as defined in the Typed Arithmetic Expression language.
-- **Naturals**: Supports natural numbers as defined in the Typed Arithmetic Expression language.
-- **Simply Typed Pure λ-Calculus**: Implements the core λ-calculus with type annotations.
-- **Unit Data Type and Value**: Supports the `unit` data type, representing a single value.
-- **Let Bindings**: Enables local variable bindings for enhanced expressiveness.
-- **Sequencing Operator**: Allows for sequential execution of expressions.
-- **Reference Operations**: Adds support for mutable state through references.
+1. Open your terminal or IDE.
+2. Run the Game:
+   - Using the command line:
+     ```bash
+     make demo
+     ```
+
+## Game Features
+
+- **Responsive GUI**: Smooth animations for tile movement and merging.
+- **Score Tracking**: Displays the current score dynamically.
+- **Restart Option**: Reset the game and start afresh.
+- **2048 Mechanics**: Implements the classic tile-matching logic to achieve the 2048 tile.
+- **MVC Architecture**: Ensures clean separation between game logic, user interface, and control logic.
 
 ---
 
 ## Key Components
 
-### `ssos` Function
-Implements the **small-step operational semantics (SSOS)** for the language, defining how terms evaluate step by step.
+### BoardT Class - Model
 
-### `typeCheck` Function
-Verifies the type correctness of terms, ensuring they adhere to the language's type-checking rules.
+Handles the core game logic:
+
+- Maintains the game board and score.
+- Implements tile merging and movement logic.
+- Checks for win/loss conditions.
+
+### UserInterface Class
+
+Manages the graphical user interface:
+
+- Displays the game board and tiles.
+- Updates the UI dynamically based on the game state.
+
+### Controller Class - Controller
+
+Acts as the intermediary between BoardT and UI:
+
+- Processes user input (e.g., arrow key presses).
+- Updates the model and refreshes the view accordingly.
 
 ---
 
-## Implementation Notes
+## MVC Design Pattern
 
-- **Haskell-Based Development**: The project leverages the functional programming capabilities of Haskell to implement the language features.
-- **Provided Template**: The project starts with a provided `template.hs` file containing predefined data types. These types form the basis for implementing `ssos` and `typeCheck`.
-- **Standardized Data Types**: While there may be slight variations from previous projects, this implementation adheres strictly to the provided data types for consistency.
+This project is structured using the **Model-View-Controller (MVC)** pattern:
+
+- **Model**: Encapsulates the game logic and data.
+- **View**: Handles the user interface and rendering.
+- **Controller**: Manages input and coordinates between Model and View.
 
 ---
 
 ## Summary
 
-This project demonstrates the integration of theoretical concepts with practical programming, resulting in a functional and type-safe implementation of a simple programming language.
-
+This project demonstrates how the MVC design pattern can be used to create a modular, scalable, and interactive Java GUI application. By separating concerns into distinct components, it ensures maintainability and ease of future enhancements.
 
 
 
